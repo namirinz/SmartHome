@@ -22,8 +22,8 @@ GPIO.setup(Green_LED ,GPIO.OUT)
 GPIO.setup(Red_LED ,GPIO.OUT)
 
 appid = 'SmartHomeTUP'
-gearkey = 'wrOQvKY9sves1G9'
-gearsecret =  'JuqZaDuwWTFASNX2aMNCYrCSW'
+gearkey = ' ' #ขออนุญาตเว้นไว้
+gearsecret =  ' ' #ขออนุญาตเว้นไว้
 
 #Connect to Netpie
 microgear.create(gearkey,gearsecret,appid,{'debugmode': True})
@@ -31,14 +31,12 @@ def connection():
     logging.info("Now I am connected with netpie")
 
 def subscription(topic,message):
-   # print("adsfasdfvxc")
     logging.info(topic+" "+message)
-    #print("asdfasdf")
     LED_State(message)
 def disconnect():
     logging.info("disconnected")
 
-
+$
 microgear.setalias("RaspiTUP")
 microgear.on_connect = connection
 microgear.on_message = subscription
@@ -86,8 +84,10 @@ def main1():
 		button_state = GPIO.input(button)
 		if button_state == False:
 			print('Button Pressed...')
-                	#Run Capture
+			
+                	#Run Capture File
 			os.system('python capture.py')
+			
 			#Send Image to Line
 			file = {
 				'message': (None, "Someone has press the button"),
