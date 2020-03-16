@@ -13,3 +13,7 @@ This smart home project has built for OCOP 2019 at Triamudomsuksa Pattanakarn Sc
 1) Face Recognition
 2) Raspi x Line Notify
 3) Control Panel
+
+# ขั้นตอน
+ ## กรณีต้องการเพิ่มข้อมูลใบหน้าลงในฐานข้อมูล
+ 1) รันไฟล์ En
