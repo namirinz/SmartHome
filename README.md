@@ -19,7 +19,7 @@ This smart home project has built for OCOP 2019 at Triamudomsuksa Pattanakarn Sc
  1) รันคำสั่ง python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/"ชื่อใบหน้า"
    เพื่อเก็บข้อมูลใบหน้าลงในฐานข้อมูล (ยิ่งเยอะการประมวลผลยิ่งแม่นยำ)
  2) รันคำสั่ง python encode_faces.py --dataset dataset --encodings encodings.pickle --detection-method hog
-   เพื่อ encode เพื่อนำข้อมูลจากฐานข้อมูลแปลงเป็นไฟล์สำหรับประมวลผลได้ 
+   เพื่อ encode โดยจะนำข้อมูลจากฐานข้อมูลแปลงเป็นไฟล์ที่สามารถประมวลผลได้ 
  ## ระบบ main
  1) เมื่อ micro switch ถูกกด ระบบจะทำการถ่ายรูปใบหน้าแล้วส่งไลน์ไปยังเจ้าของ (Admin)
  2) ระบบ face recognition จะทำงานยื่นใบหน้าให้มีกรอบสี่เหลี่ยมหน้าในจอ
