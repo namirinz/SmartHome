@@ -10,9 +10,9 @@ This smart home project has built for OCOP 2019 at Triamudomsuksa Pattanakarn Sc
 6) RGB LED
 
 # Feature
-1) Face Recognition
-2) Raspi x Line Notify
-3) Control Panel
+1) Face Recognition | ระบบรู้จำใบหน้า
+2) Raspi x Line Notify | การใช้ line notify เพื่อแจ้งเตือนและส่งข้อมูลแก่เจ้าของ
+3) Control Panel feat NETPIE.io | สำหรับควบคุมอุปรณ์ต่างๆผ่านเว็บไซต์และสมาร์ทโฟน
 
 # ขั้นตอน
  ## การเพิ่มข้อมูลใบหน้าลงในฐานข้อมูล
