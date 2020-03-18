@@ -26,5 +26,5 @@ This smart home project has built for OCOP 2019 at Triamudomsuksa Pattanakarn Sc
  3) หากประมวลผลแล้วพบว่าใบหน้าตรงกับฐานข้อมูล ระบบจะส่งไลน์ไปยังเจ้าของว่า "ชื่อที่อยู่ในฐานข้อมูล" ได้ทำการสแกนหน้า พร้อมทั้งปลดล๊อคประตู
  4) หากประมวลผลแล้วพบว่าใบหน้าไม่ตรงกับฐานข้อมูล ระบบจะส่งไลน์ไปยังเจ้าของว่า "มีผู้บุกรุก" ได้ทำการสแกนหน้า ส่วนประตูก็จะไม่ปลดล็อค
 
-![Test]()
-![Test2]()
+![Test](https://github.com/namirinz/SmartHome/blob/master/images/Preview1.jpg?raw=true)
+![Test2](https://github.com/namirinz/SmartHome/blob/master/images/test.png?raw=true)
