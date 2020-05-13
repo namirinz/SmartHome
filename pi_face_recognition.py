@@ -10,12 +10,12 @@ import imutils
 import pickle
 import time
 import cv2
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
-#GPIO.setmode(GPIO.BOARD)
-#GPIO.setup(18,GPIO.OUT)
-#pwm = GPIO.PWM(18,50)
-#pwm.start(0)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(18,GPIO.OUT)
+pwm = GPIO.PWM(18,50)
+pwm.start(0)
 
 isSame = 0
 isNotSame = 0
@@ -135,9 +135,9 @@ for _ in range(20):
 
 if isSame > isNotSame:
 	print("Hi ")
-	#pwm.ChangeDutyCycle(12)
+	pwm.ChangeDutyCycle(12)
 	time.sleep(10)
-	#pwm.ChangeDutyCycle(1)
+	pwm.ChangeDutyCycle(1)
 
 else :
 	print("Who are you")

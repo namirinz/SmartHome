@@ -1,11 +1,11 @@
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 import requests
 import os
-#import Adafruit_DHT
+import Adafruit_DHT
 import microgear.client as microgear
 import logging
-'''
+
 sensor = Adafruit_DHT.DHT22
 button = 16
 DHT_Sensor = 14
@@ -20,10 +20,10 @@ GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(Blue_LED ,GPIO.OUT)
 GPIO.setup(Green_LED ,GPIO.OUT)
 GPIO.setup(Red_LED ,GPIO.OUT)
-'''
+
 appid = 'SmartHomeTUP'
-gearkey = 'wrOQvKY9sves1G9' #ขออนุญาตเว้นไว้
-gearsecret =  'JuqZaDuwWTFASNX2aMNCYrCSW' #ขออนุญาตเว้นไว้
+gearkey = ' ' #ขออนุญาตเว้นไว้
+gearsecret =  ' ' #ขออนุญาตเว้นไว้
 
 #Connect to Netpie
 microgear.create(gearkey,gearsecret,appid,{'debugmode': True})
@@ -32,7 +32,7 @@ def connection():
 
 def subscription(topic,message):
     logging.info(topic+" "+message)
-    #LED_State(message)
+    LED_State(message)
 def disconnect():
     logging.info("disconnected")
 
@@ -43,7 +43,6 @@ microgear.on_disconnect = disconnect
 microgear.subscribe("/Led")
 microgear.connect()
 
-'''
 def LED_State(message):
 	print(message)
 	if message == "b'ON'":
@@ -70,19 +69,19 @@ def LED_State(message):
                 GPIO.output(Red_LED,0)
                 GPIO.output(Green_LED,0)
                 GPIO.output(Blue_LED,1)
-'''
+
 
 def main1():
 	while True:
         #DHT22 Sensor Reading
-		#humidity, temperature = Adafruit_DHT.read_retry(sensor, DHT_Sensor)
+		humidity, temperature = Adafruit_DHT.read_retry(sensor, DHT_Sensor)
 		#print("Temp={0:0.1f}*C  Humidity={1:0.1f}%".format(temperature, humidity))
-		#microgear.publish("/outdoor/temp",int(temperature))
-		#microgear.publish("/outdoor/hud",int(humidity))
+		microgear.publish("/outdoor/temp",int(temperature))
+		microgear.publish("/outdoor/hud",int(humidity))
 
 	#Button Reading
-		#button_state = GPIO.input(button)
-		if False == False: #button_state == False
+		button_state = GPIO.input(button)
+		if button_state == False:
 			print('Button Pressed...')
 			
                 	#Run Capture File
@@ -105,7 +104,7 @@ def main1():
 			os.system('python pi_face_recognition.py --cascade haarcascade_frontalface_default.xml --encodings encodings.pickle')
 			time.sleep(0.2)
 
-#try :
-main1()
-#except KeyboardInterrupt :
-	#GPIO.cleanup()
+try :
+	main1()
+except KeyboardInterrupt :
+	GPIO.cleanup()
