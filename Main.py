@@ -22,8 +22,8 @@ GPIO.setup(Green_LED ,GPIO.OUT)
 GPIO.setup(Red_LED ,GPIO.OUT)
 '''
 appid = 'SmartHomeTUP'
-gearkey = ' ' #ขออนุญาตเว้นไว้
-gearsecret =  ' ' #ขออนุญาตเว้นไว้
+gearkey = 'wrOQvKY9sves1G9' #ขออนุญาตเว้นไว้
+gearsecret =  'JuqZaDuwWTFASNX2aMNCYrCSW' #ขออนุญาตเว้นไว้
 
 #Connect to Netpie
 microgear.create(gearkey,gearsecret,appid,{'debugmode': True})
