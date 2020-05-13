@@ -105,7 +105,7 @@ def main1():
 			os.system('python pi_face_recognition.py --cascade haarcascade_frontalface_default.xml --encodings encodings.pickle')
 			time.sleep(0.2)
 
-try :
-	main1()
+#try :
+main1()
 #except KeyboardInterrupt :
 	#GPIO.cleanup()
