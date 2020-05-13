@@ -36,7 +36,6 @@ def subscription(topic,message):
 def disconnect():
     logging.info("disconnected")
 
-$
 microgear.setalias("RaspiTUP")
 microgear.on_connect = connection
 microgear.on_message = subscription
