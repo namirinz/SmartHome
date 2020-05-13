@@ -1,11 +1,11 @@
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import time
 import requests
 import os
-import Adafruit_DHT
+#import Adafruit_DHT
 import microgear.client as microgear
 import logging
-
+'''
 sensor = Adafruit_DHT.DHT22
 button = 16
 DHT_Sensor = 14
@@ -20,7 +20,7 @@ GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(Blue_LED ,GPIO.OUT)
 GPIO.setup(Green_LED ,GPIO.OUT)
 GPIO.setup(Red_LED ,GPIO.OUT)
-
+'''
 appid = 'SmartHomeTUP'
 gearkey = ' ' #ขออนุญาตเว้นไว้
 gearsecret =  ' ' #ขออนุญาตเว้นไว้
@@ -32,11 +32,10 @@ def connection():
 
 def subscription(topic,message):
     logging.info(topic+" "+message)
-    LED_State(message)
+    #LED_State(message)
 def disconnect():
     logging.info("disconnected")
 
-$
 microgear.setalias("RaspiTUP")
 microgear.on_connect = connection
 microgear.on_message = subscription
@@ -44,6 +43,7 @@ microgear.on_disconnect = disconnect
 microgear.subscribe("/Led")
 microgear.connect()
 
+'''
 def LED_State(message):
 	print(message)
 	if message == "b'ON'":
@@ -70,18 +70,18 @@ def LED_State(message):
                 GPIO.output(Red_LED,0)
                 GPIO.output(Green_LED,0)
                 GPIO.output(Blue_LED,1)
-
+'''
 
 def main1():
 	while True:
         #DHT22 Sensor Reading
-		humidity, temperature = Adafruit_DHT.read_retry(sensor, DHT_Sensor)
+		#humidity, temperature = Adafruit_DHT.read_retry(sensor, DHT_Sensor)
 		#print("Temp={0:0.1f}*C  Humidity={1:0.1f}%".format(temperature, humidity))
-		microgear.publish("/outdoor/temp",int(temperature))
-		microgear.publish("/outdoor/hud",int(humidity))
+		#microgear.publish("/outdoor/temp",int(temperature))
+		#microgear.publish("/outdoor/hud",int(humidity))
 
 	#Button Reading
-		button_state = GPIO.input(button)
+		#button_state = GPIO.input(button)
 		if button_state == False:
 			print('Button Pressed...')
 			
@@ -107,5 +107,5 @@ def main1():
 
 try :
 	main1()
-except KeyboardInterrupt :
-	GPIO.cleanup()
+#except KeyboardInterrupt :
+	#GPIO.cleanup()

@@ -10,15 +10,15 @@ import imutils
 import pickle
 import time
 import cv2
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(18,GPIO.OUT)
-pwm = GPIO.PWM(18,50)
-pwm.start(0)
+#GPIO.setmode(GPIO.BOARD)
+#GPIO.setup(18,GPIO.OUT)
+#pwm = GPIO.PWM(18,50)
+#pwm.start(0)
 
-Yessdsdsd = 0
-UnDSFG = 0
+isSame = 0
+isNotSame = 0
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -36,15 +36,15 @@ detector = cv2.CascadeClassifier(args["cascade"])
 
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] starting video stream...")
-#vs = VideoStream(src=0).start()
-vs = VideoStream(usePiCamera=True).start()
+vs = VideoStream(src=0).start() #uncomment if you use webcam camera
+#vs = VideoStream(usePiCamera=True).start() #uncomment if you use raspberry pi camera
 time.sleep(2.0)
 
 # start the FPS counter
 fps = FPS().start()
 
 # loop over frames from the video file stream
-for asdfasdf in range(20):
+for _ in range(20):
 	# grab the frame from the threaded video stream and resize it
 	# to 500px (to speedup processing)
 	frame = vs.read()
@@ -79,7 +79,6 @@ for asdfasdf in range(20):
 
 		# check to see if we have found a match
 		if True in matches:
-			print("SDFLKSLDFKL")
 			# find the indexes of all matched faces then initialize a
 			# dictionary to count the total number of times each face
 			# was matched
@@ -100,14 +99,14 @@ for asdfasdf in range(20):
 			#pwm.ChangeDutyCycle(12)
 			#time.sleep(5)
 			#pwm.ChangeDutyCycle(1)
-			Yessdsdsd  += 1
+			print("Is that you ? {}".format(name))
+			isSame  += 1
 		else :
-			UnDSFG  += 1
-			print("Who are you")
+			isNotSame  += 1
 		# update the list of names
 		names.append(name)
-		print("x is ",Yessdsdsd)
-		print("y is ",UnDSFG )
+		print("isSame =",isSame)
+		print("isNotSame = ",isNotSame )
 #	break
 
 
@@ -134,11 +133,11 @@ for asdfasdf in range(20):
 	# update the FPS counter
 	fps.update()
 
-if Yessdsdsd > UnDSFG:
-	print("Hi Sir")
-	pwm.ChangeDutyCycle(12)
+if isSame > isNotSame:
+	print("Hi ")
+	#pwm.ChangeDutyCycle(12)
 	time.sleep(10)
-	pwm.ChangeDutyCycle(1)
+	#pwm.ChangeDutyCycle(1)
 
 else :
 	print("Who are you")
