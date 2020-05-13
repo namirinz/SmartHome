@@ -82,7 +82,7 @@ def main1():
 
 	#Button Reading
 		#button_state = GPIO.input(button)
-		if button_state == False:
+		if False == False: #button_state == False
 			print('Button Pressed...')
 			
                 	#Run Capture File
