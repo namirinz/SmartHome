@@ -21,6 +21,7 @@ GPIO.setup(Blue_LED ,GPIO.OUT)
 GPIO.setup(Green_LED ,GPIO.OUT)
 GPIO.setup(Red_LED ,GPIO.OUT)
 
+
 appid = 'SmartHomeTUP'
 gearkey = ' ' #ขออนุญาตเว้นไว้
 gearsecret =  ' ' #ขออนุญาตเว้นไว้
