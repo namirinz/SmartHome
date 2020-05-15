@@ -36,8 +36,8 @@ detector = cv2.CascadeClassifier(args["cascade"])
 
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] starting video stream...")
-vs = VideoStream(src=0).start() #uncomment if you use webcam camera
-#vs = VideoStream(usePiCamera=True).start() #uncomment if you use raspberry pi camera
+#vs = VideoStream(src=0).start() # uncomment if you use webcam camera
+vs = VideoStream(usePiCamera=True).start() # uncomment if you use raspberry pi camera
 time.sleep(2.0)
 
 # start the FPS counter
