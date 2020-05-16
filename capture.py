@@ -4,4 +4,4 @@
 '''
 from picamera import PiCamera
 camera = PiCamera()
-camera.capture('/home/pi/Pic1/Image.png')
+camera.capture('/home/pi/SmartHome/Pic1/Image.png')
