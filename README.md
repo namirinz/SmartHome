@@ -1,3 +1,8 @@
+# UPDATE 2020
+เนื่องจาก NETPIE ได้ออกเวอร์ชันใหม่ (NETPIE 2020) โดยใช้ MQTT แทน Microgear และมีการส่งข้อความในรูปแบบ
+JSON จึงได้เขียนโค้ด main2020.py เพื่อรองรับฟีเจอร์นี่ ส่วนโค้ดดั้งเดิมตอนปี 2018 คือ main2018.py
+                                                                        จึงเรียนมาเพื่อทราบ
+
 # SmartHome
 This smart home project has built for OCOP 2019 at Triamudomsuksa Pattanakarn School.
 
