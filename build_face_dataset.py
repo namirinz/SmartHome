@@ -1,5 +1,5 @@
 # USAGE
-# python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/name
+# python3 build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/name
 
 # import the necessary packages
 from imutils.video import VideoStream
