@@ -57,8 +57,8 @@ def funcToDo(key,value):
 
 # Initialize Netpie information
 NETPIE_HOST = "broker.netpie.io"
-CLIENT_ID = "cb6af011-03e8-4de1-9858-ee332cce4684" # YOUR CLIENT ID
-DEVICE_TOKEN = "Mutfgbmq745caW2HvqbYD6566KMY7yVF" # YOUR TOKEN
+CLIENT_ID = "YOUR CLIENT ID" # YOUR CLIENT ID
+DEVICE_TOKEN = "YOUR TOKEN" # YOUR TOKEN
 
 # Function to react with NETPIE
 def on_connect(client, userdata, flags, rc):
